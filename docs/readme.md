@@ -1,6 +1,6 @@
-# Panduan Dokumentasi
+# Panduan API Contract
 
-1. Dokumentasi build with POSTMAN
+1. API Contract build with POSTMAN
 2. enviroment :
    ```
     url = http://localhost:3000
