@@ -1,0 +1,44 @@
+version: "3"
+
+services:
+  loadbalancer:
+    image: nginx:latest
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - backend
+    ports:
+      - "3000:80"
+  mysql:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_DATABASE: db_perqara
+      MYSQL_USER: ada
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: pwd
+      MYSQL_ROOT_HOST: "172.21.0.1" # prefer belongs to your network
+    volumes:
+      - ./infra/migration/perqara.sql:/docker-entrypoint-initdb.d/perqara.sql
+      - ./infra/storage/mysql:/var/lib/mysql
+    ports:
+      - "3306:3306"
+  backend:
+    restart: always
+    hostname: backend
+    environment:
+      DATABASE_NAME: db_perqara
+      DATABASE_HOST: localhost
+      DATABASE_PORT: 3306
+      DATABASE_PASSWORD: password
+      DATABASE_USER: ada
+    volumes:
+      - ".:/usr/src/app"
+      - /usr/src/app/node_modules/
+    build: .
+    command: npm start
+  # deploy:
+  #   resources:
+  #     limits:
+  #         memory: 500M
+  #   replicas: 3
