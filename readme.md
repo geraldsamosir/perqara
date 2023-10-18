@@ -19,3 +19,6 @@ we use mysql point (geo cordinat method to get nearest law office)
 
 # Pattern used at this project
 Router -> Middleware -> handler -> service -> Repository -> database
+
+# linting 
+using standard.js
