@@ -22,3 +22,6 @@ Router -> Middleware -> handler -> service -> Repository -> database
 
 # linting 
 using standard.js
+
+#test Coverage
+using jest just run `npm run test` and it will make a coverage folder and reporting using instanbul.js
