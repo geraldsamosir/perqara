@@ -1,0 +1,128 @@
+{
+	"info": {
+		"_postman_id": "39360a60-6230-4140-9fbf-c693c15263d2",
+		"name": "Perqara Services",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "filter lawyers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/lawyer?name=Cisauk&lat=-6.692440&long=105.973396&experience=2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"lawyer"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Cisauk",
+							"description": "lawyers_name"
+						},
+						{
+							"key": "lat",
+							"value": "-6.692440",
+							"description": "user  lat"
+						},
+						{
+							"key": "long",
+							"value": "105.973396",
+							"description": "user  long"
+						},
+						{
+							"key": "experience",
+							"value": "2",
+							"description": "in year"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get lawyers by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/lawyer/15f0b737-6dac-11ee-ae47-0242c0a85002",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"lawyer",
+						"15f0b737-6dac-11ee-ae47-0242c0a85002"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Lawyer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Lawyer P Panjang baru\",\r\n    \"experience\": 10,\r\n    \"office_coordinate\": {\r\n        \"lat\": -6.692440,\r\n        \"long\": 105.973396\r\n    },\r\n    \"office_address\": \"dimana mana\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/lawyer",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"lawyer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Lawyer",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/lawyer/2233b8eb-6dab-11ee-a9bb-0242c0a85002",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"lawyer",
+						"2233b8eb-6dab-11ee-a9bb-0242c0a85002"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete lawyer",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/lawyer/15f0b737-6dac-11ee-ae47-0242c0a85002",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"lawyer",
+						"15f0b737-6dac-11ee-ae47-0242c0a85002"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

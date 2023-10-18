@@ -22,3 +22,5 @@ Router -> Middleware -> handler -> service -> Repository -> database
 
 # linting 
 using standard.js
+
+# for documentation of api in docs folder

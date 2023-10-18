@@ -79,7 +79,7 @@ Router.delete('/:lawyer_id', Middleware.deleteLawyer, (req, res, next) => {
     }
   } = req
 
-  return LawyerService.deleteLawyer.updateLawyer(lawyerId)
+  return LawyerService.deleteLawyer(lawyerId)
     .then(response => res.json(response))
     .catch(error => next(error))
 })
