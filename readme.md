@@ -18,9 +18,15 @@ we use mysql point (geo cordinat method to get nearest law office)
 3. configuration in declare ini docker-compose.yml
 
 # Pattern used at this project
+
 Router -> Middleware -> handler -> service -> Repository -> database
 
-# linting 
+# linting
+
 using standard.js
+
+# test Coverage
+
+using jest just run `npm run test` and it will make a coverage folder and reporting using instanbul.js
 
 # for documentation of api in docs folder
